@@ -1,4 +1,4 @@
-# Notas Taquigráficas - CPI Pandemia
+# Notas Taquigráficas - CPI da Pandemia
 
 Script em R para estruturar em Rdata e csv as notas taquigráficas do Senado, em especial da CPI da Pandemia.
 Por exemplo, [link url original](https://www25.senado.leg.br/web/atividade/notas-taquigraficas/-/notas/r/9996) de uma delas.
