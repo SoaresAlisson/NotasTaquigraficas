@@ -18,4 +18,4 @@ Deste modo é possível separar somente as falas de pessoas específicas, de blo
 - Melhora do script em R para estruturar em Rdata e csv as notas taquigráficas do Senado, em especial da CPI da Pandemia.
   - Ex.: separação do bloco parlamentar em uma coluna, partido em outra, e estado e demais informações em colunas diferentes.
 - Disponibilização do script em R que faz a conversão do texto não-estruturado em tabela.
-- Um dataframe geral, com todos as reuni. 
+- Um dataframe geral, com todos as reuniões em um só arquivo. 
