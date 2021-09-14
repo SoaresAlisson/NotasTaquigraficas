@@ -1,21 +1,29 @@
 # Notas Taquigráficas - CPI da Pandemia
-Aqui você encontra notas taquigráficas da [CPI da Pandemia](https://legis.senado.leg.br/comissoes/comissao?codcol=2441) estruturadas em Rdata e csv, feita com um script em R (será disponibilizado em breve). 
+O script pega as Notas Taquigráficas e a estrutura em dataframes .Rds e tabelas .csv.
+No caso, o script pega dados da CPI da Pandemia, mas com pequenos ajustes, pode funcionar também para outras notas taquigráficas.
 
-- Os arquivos estão separadas em três colunas: 
-  - Coluna 1: "Nomes", quem fala no momento
-  - Coluna 2: "cargo_função", qual o bloco parlamentar de quem fala, o partido e o estado da Federação. No caso do presidente, a coluna 1 fica como Presidente, e a coluna 2 mostra a pessoa/partido/Estado da federação, assim como está originalmente nas Notas Taquigráficas (a se pensar se compensa mudar as colunas, neste caso). No caso do depoente, esta coluna fica vazia.
-  - Coluna 3: "falas" o que foi dito por aquela pessoa.
-
-Deste modo é possível separar somente as falas de pessoas específicas, de blocos parlamentares específicos ou de partidos, usando apenas filtros simples.
-
-
+Aqui você encontra notas taquigráficas da [CPI da Pandemia](https://legis.senado.leg.br/comissoes/comissao?codcol=2441) estruturadas em dataframe Rds (da linguagem R) e em tabela csv, feita com um script em R (será disponibilizado em breve). Deste modo é possível separar somente as falas de pessoas específicas, de blocos parlamentares específicos ou de partidos, usando apenas filtros simples (como do dplyr).
 - [Aqui](https://www25.senado.leg.br/web/atividade/notas-taquigraficas/-/notas/r/9996) você encontra um exemplo de uma das notas taquigráficas no site do Senado.
-- A tabela em csv com datas, número da reunião, depoente e todos links você encontra [aqui](https://github.com/SoaresAlisson/NotasTaquigraficas/blob/master/NotasTaq_listagem.csv).
 
-## Plano para atualizações futuras (em breve)
-- Mais arquivos de notas taquigráficas
-  -  separação destes em pastas diferentes. Todos csv ficarão em uma pasta, todos os Rdata em outra.
-- Melhora do script em R para estruturar em Rdata e csv as notas taquigráficas do Senado, em especial da CPI da Pandemia.
-  - Ex.: separação do bloco parlamentar em uma coluna, partido em outra, e estado e demais informações em colunas diferentes.
-- Disponibilização do script em R que faz a conversão do texto não-estruturado em tabela.
-- Um dataframe geral, com todos as reuniões em um só arquivo. 
+## Se quiser apenas baixar os arquivos:
+- Todas as tabelas estão em formato .Rds (na pasta rds) e em formato .csv (na pasta csv)
+- Há a tabela com a listagem com todas as Notas Taquigráficas na versão csv ([csv/NotasTaq-CPI_Pandemia-listagem.csv](https://github.com/SoaresAlisson/NotasTaquigraficas/blob/master/csv/NotasTaq-CPI_Pandemia-listagem.csv)) ou na versão .Rds ([rds/NotasTaq-CPI_Pandemia-listagem.Rds](https://github.com/SoaresAlisson/NotasTaquigraficas/raw/master/rds/NotasTaq-CPI_Pandemia-listagem.Rds)). Estes contém a seguinte estrutura:
+	- Coluna `data`(data da referida reunião no formato ano-mês-dia), `reuniao_dia` (cada reunião possui um número diferente), `Depoente.tema` (nome do depoente em oitiva, ou se reunião deliberativa) e `link_notaTaquigrafica` com o link para a Nota taquigráfica.
+
+Já os arquivos de Nota Taquigráfica estão estruturados da seguinte forma:
+
+- `reuniao`: número da reunião
+- `data`:  data da reunião da CPI no formato ano-mês-dia
+- `nome`: Nome de quem fala no momento
+- `funcao_blocoPar`: Qual a função (se presidente) ou bloco parlamentar, partido e Estado da federação. Esta foi desmembrada nas seguintes colunas:
+	- `BlocoParl`: Apenas o bloco parlamentar
+	- `partido`: Apenas o partido
+	- `estado`: Estado da Federação do parlamentar
+- `complemento`: alguns complementos, como "pela ordem", "fora do microfone", "como relator".
+- `fala`: a fala da pessoa.
+
+## Rodando o script na sua máquina
+- O script pega a lista de Notas Táquigráficas na página do Senado e atualiza a lista de notas taquigráficas, salvo em `nt.lista` (que, apesar do nome, é um tibble)
+- A partir de `nt.lista` o script baixa os arquivos.
+- Se parar o script, ele retoma onde parou. O critério de conferência é o arquivo .Rds existir e estar na pasta `rds`.
+
