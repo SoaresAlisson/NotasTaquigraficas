@@ -6,24 +6,24 @@ Aqui você encontra notas taquigráficas da [CPI da Pandemia](https://legis.sena
 - [Aqui](https://www25.senado.leg.br/web/atividade/notas-taquigraficas/-/notas/r/9996) você encontra um exemplo de uma das notas taquigráficas no site do Senado.
 
 ## Se quiser apenas baixar os arquivos:
-- Todas as tabelas estão em formato .Rds (na pasta rds) e em formato .csv (na pasta csv)
+- Todas as tabelas estão em formato .Rds (na [pasta rds](https://github.com/SoaresAlisson/NotasTaquigraficas/tree/master/rds)) e em formato .csv (na [pasta csv](https://github.com/SoaresAlisson/NotasTaquigraficas/tree/master/csv))
 - Há a tabela com a listagem com todas as Notas Taquigráficas na versão csv ([csv/NotasTaq-CPI_Pandemia-listagem.csv](https://github.com/SoaresAlisson/NotasTaquigraficas/blob/master/csv/NotasTaq-CPI_Pandemia-listagem.csv)) ou na versão .Rds ([rds/NotasTaq-CPI_Pandemia-listagem.Rds](https://github.com/SoaresAlisson/NotasTaquigraficas/raw/master/rds/NotasTaq-CPI_Pandemia-listagem.Rds)). Estes contém a seguinte estrutura:
-	- Coluna `data`(data da referida reunião no formato ano-mês-dia), `reuniao_dia` (cada reunião possui um número diferente), `Depoente.tema` (nome do depoente em oitiva, ou se reunião deliberativa) e `link_notaTaquigrafica` com o link para a Nota taquigráfica.
+  - Coluna `data`(data da referida reunião no formato ano-mês-dia), `reuniao_dia` (cada reunião possui um número diferente), `Depoente.tema` (nome do depoente em oitiva, ou se reunião deliberativa) e `link_notaTaquigrafica` com o link para a Nota taquigráfica.
 
 Já os arquivos de Nota Taquigráfica estão estruturados da seguinte forma:
-
+  
 - `reuniao`: número da reunião
 - `data`:  data da reunião da CPI no formato ano-mês-dia
 - `nome`: Nome de quem fala no momento
-- `funcao_blocoPar`: Qual a função (se presidente) ou bloco parlamentar, partido e Estado da federação. Esta foi desmembrada nas seguintes colunas:
-	- `BlocoParl`: Apenas o bloco parlamentar
-	- `partido`: Apenas o partido
-	- `estado`: Estado da Federação do parlamentar
-- `complemento`: alguns complementos, como "pela ordem", "fora do microfone", "como relator".
+- `funcao_blocoPar`: Qual a função (se presidente) ou bloco parlamentar, partido e Estado da federação. Esta foi repetida de modo desmembrado nas seguintes colunas:
+  - `BlocoParl`: Apenas o bloco parlamentar
+  - `partido`: Apenas o partido
+  - `estado`: Estado da Federação do parlamentar
+- `complemento`: alguns complementos, como "pela ordem", "fora do microfone", "como relator", "Para interpelar Por videoconferência", etc.
 - `fala`: a fala da pessoa.
 
-## Rodando o script na sua máquina
-- O script pega a lista de Notas Táquigráficas na página do Senado e atualiza a lista de notas taquigráficas, salvo em `nt.lista` (que, apesar do nome, é um tibble)
-- A partir de `nt.lista` o script baixa os arquivos.
-- Se parar o script, ele retoma onde parou. O critério de conferência é o arquivo .Rds existir e estar na pasta `rds`.
-
+## Rodando o script na sua máquina (será disponibilizado em breve)
+- O script R pega a lista com as Notas Táquigráficas na página do Senado da CPI da Pandemia e atualiza a lista de notas taquigráficas, salva em `nt.lista` (que, apesar do nome, é um tibble/dataframe)
+- A partir de `nt.lista` gerado, o script baixa os arquivos das notas taquigráficas.
+- Se parar o script, ele retoma onde parou. O critério de conferência é o arquivo .Rds existir e estar na pasta `rds`. 
+  - Deste modo, é possível ir atualizando com as novas notas taquigráficas que forem surgindo.
