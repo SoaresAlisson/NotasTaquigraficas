@@ -24,6 +24,7 @@ Já os arquivos de Nota Taquigráfica estão estruturados da seguinte forma:
 
 ## Rds com todas as notas juntas
 Criei um dataframe com as notas de todas as reuniões, o [NT_todas_df.rds](https://github.com/SoaresAlisson/NotasTaquigraficas/blob/master/rds/NT_todas_df.rds).
+Há também o [NT_todas_normalizado.rds](https://github.com/SoaresAlisson/NotasTaquigraficas/blob/master/rds/NT_todas_normalizado.rds) que é o mesmo arquivo anterior, porém, a coluna nome, que no arquivo anterior continha nomes em caixa alta (caso dos senadores que estavam como presidentes), foi normalizada/padronizada.
 
 ## Rodando o script na sua máquina (será disponibilizado em breve)
 - O script R pega a lista com as Notas Táquigráficas na página do Senado da [CPI da Pandemia](https://legis.senado.leg.br/comissoes/comissao?codcol=2441) e atualiza a lista de notas taquigráficas, salva em `nt.lista` (que, apesar do nome, é um tibble/dataframe)
