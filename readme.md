@@ -22,6 +22,9 @@ Já os arquivos de Nota Taquigráfica estão estruturados da seguinte forma:
 - `complemento`: alguns complementos, como "pela ordem", "fora do microfone", "como relator", "Para interpelar Por videoconferência", etc.
 - `fala`: a fala da pessoa.
 
+## Rds com todas as notas juntas
+Criei um dataframe com as notas de todas as reuniões, o [NT_todas_df.rds](https://github.com/SoaresAlisson/NotasTaquigraficas/blob/master/rds/NT_todas_df.rds).
+
 ## Rodando o script na sua máquina (será disponibilizado em breve)
 - O script R pega a lista com as Notas Táquigráficas na página do Senado da [CPI da Pandemia](https://legis.senado.leg.br/comissoes/comissao?codcol=2441) e atualiza a lista de notas taquigráficas, salva em `nt.lista` (que, apesar do nome, é um tibble/dataframe)
 - A partir de `nt.lista` gerado, o script baixa e estrutura os arquivos das notas taquigráficas.
