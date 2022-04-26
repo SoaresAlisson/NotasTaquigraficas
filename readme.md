@@ -31,4 +31,5 @@ Há também o [NT_todas_normalizado.rds](https://github.com/SoaresAlisson/NotasT
 - A partir de `nt.lista` gerado, o script baixa e estrutura os arquivos das notas taquigráficas.
 - Se parar o script, ele retoma onde parou. O critério de conferência é o arquivo .Rds existir e estar na pasta `rds`. 
   - Deste modo, é possível ir atualizando com as novas notas taquigráficas que forem surgindo.
-Veja o script no link [aqui](https://htmlpreview.github.io/?https://raw.githubusercontent.com/SoaresAlisson/NotasTaquigraficas/master/NotasTaq_parser.html).
+  
+**Veja o script neste link [aqui](https://htmlpreview.github.io/?https://raw.githubusercontent.com/SoaresAlisson/NotasTaquigraficas/master/NotasTaq_parser.html).**
